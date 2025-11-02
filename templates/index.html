@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyShow Lite</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><h1>🎟️ BookMyShow Lite</h1></header>
+
+  <section class="movies">
+    {% for movie in movies %}
+    <div class="movie">
+      <img src="{{ movie.poster }}" alt="{{ movie.name }}">
+      <h2>{{ movie.name }}</h2>
+      <p>{{ movie.genre }}</p>
+      <a href="/book/{{ movie.name }}"><button>Book Now</button></a>
+    </div>
+    {% endfor %}
+  </section>
+
+  <footer><p>© 2025 BookMyShow Lite</p></footer>
+</body>
+</html>
